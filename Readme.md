@@ -1,5 +1,5 @@
 ﻿# PROJET FINAL DEVOPS. 
-![](images/baniere.PNG)
+![](sources/app/images/baniere.PNG)
 - [PROJET FINAL DEVOPS.](#projet-final-devops)
   - [INTRODUCTION](#introduction)
       - [odoo](#odoo)
@@ -49,7 +49,7 @@ Le site web vitrine a été conçu par l’équipe de développeurs de l’entre
 
 Ci-dessous un aperçu du site vitrine attendu. 
 
-![](images/site_vitrine.jpeg)
+![](sources/app/images/site_vitrine.jpeg)
 
 **NB:** L’image créée devra permettre de lancer un conteneur permettant d’héberger ce site web et ayant les liens adéquats permettant d’accéder à aux applications internes 
 
@@ -79,7 +79,7 @@ Une fois le test terminé, supprimez le conteneur de test et poussez votre image
 
 
 ## **PARTIE 2: Mise en place d'un pipeline CI/CD à l'aide de Gitlab-CI et Terraform**
-![](images/pipeline.jpeg)
+![](sources/app/images/pipeline.jpeg)
 L'entreprise ICGROUP souhaite mettre en place un pipeline CI/CD permettant l'intégration et le déploiement en continu de cette solution sur leurs différentes machines dans différents environnements. L'entreprise étant fan de nouvelles technologies, elle a opté pour Gitlab-CI comme outil de mise en place du Pipeline CICD.
 
 ### a. Infrastructure
@@ -112,18 +112,18 @@ Le Pipeline devra faire les actions suivantes:
 ### c. Customisation de la conteneurisation
 Afin de davantage automatiser la solution, vous devez créer à la racine de votre dépôt, un fichier appelé ``releases.txt`` dans lequel vous entrerez les données sur l'application, à savoir ``ODOO_URL``, ``PGADMIN_URL`` et ``version``.
 Ce fichier devra ressembler à ceci, où version représente le tag de l'image docker:
-![](images/releases.jpeg)
+![](sources/app/images/releases.jpeg)
 
 Par la suite, vous devez modifier votre Dockerfile afin qu’il puisse, lors du build, récupérer les valeurs des URL dans le fichier ``releases.txt`` et les fournir automatiquement en variable d’environnement au conteneur. Il en est de même pour le tag de l'image buildée, qui pourra être récupéré via ce  même mécanisme.
 Cela pourrait se faire à l'aide  des commandes ``awk`` et ``export``. Ci-dessous un exemple.
-![](images/export_var.jpeg)
+![](sources/app/images/export_var.jpeg)
 
 
 ## **PARTIE 3: Déploiement des différentes applications dans un cluster Kubernetes**
 
 ### a. Architecture
 L'entreprise souhaites à présent migrer ses applications sur cluster ``Kubernetes``, car semblerait -il que cette solution d'orchestration offre plus de possibilité que la solution native de docker, ``docker SWARM``. On se propose donc de donner une amélioration du Pipeline intégrant celà. Les applications pourront être déployées dans le cluster, selon l'architecture suivante:
-![](images/synoptique_Kubernetes.jpeg)
+![](sources/app/images/synoptique_Kubernetes.jpeg)
 
 Etant donné cette architecture logicielle, bien vouloir identifier en donnant le type et le rôle de chacune des ressources (A…H) mentionnées. 
 
@@ -147,7 +147,7 @@ Servez-vous de la documentation de déploiement de PgAdmin sous forme de contene
 Afin de réduire le nombre de taches manuelles, nous souhaiterons qu’au démarrage de votre conteneur PgAdmin, que ce dernier ait automatiquement les données nécessaires lui permettant de se connecter à votre Base de donnée Odoo. Pour ce faire, il existe un fichier de configuration PgAdmin que vous devrez au préalable customiser et fournir par la suite à votre conteneur/POD sous forme de volume. 
 
 Ce fichier doit être situé au niveau du conteneur dans le répertoire : ``/pgadmin4/servers.json`` 
-![](images/server_def.jpeg)
+![](sources/app/images/server_def.jpeg)
 
 
  ### e. Test de fonctionnement et rapport final
@@ -158,7 +158,7 @@ Lancez l’exécution de votre pipeline afin de déployer les différentes appli
 
 Ci-dessous un exemple de description des qualifications souhaitées pour un poste de Devops 
 
-![](images/offre_emploi.jpeg)
+![](sources/app/images/offre_emploi.jpeg)
 
 **NB** : Bien vouloir preter attention aux qualités encadrées en jaune ci-dessus, vous vous rendez compte en effet que maitriser les technologies seulement ne suffit pas, il faut en plus de ca avoir un esprit très créatif, de très bonnes capacités redactionnelles pour rediger vos différents rapports et également des qualités de pédagogue qui vous aideront à parfaire les explications de vos actions dans vos différents rapports afin de faciliter leur compréhension. 
 
