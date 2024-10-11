@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: odoo-pvc
   labels:
-    type: local
+    app: odoo
     env: prod
   namespace: ic-webapp
 spec:
