@@ -31,8 +31,9 @@ spec:
             - containerPort: 5050
               name: postgres
           volumeMounts:
-            - mountPath: /pgadmin4
+            - mountPath: /pgadmin4/servers.json
               name: pg-admin-server
+              subPath: servers.json
             - mountPath: /var/lib/pgadmin
               name: pg-admin-data
       volumes:
